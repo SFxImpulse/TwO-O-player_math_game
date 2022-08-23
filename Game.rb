@@ -5,11 +5,11 @@ class Game
 
   player1 = Player.new("Player 1", true)
   player2 = Player.new("Player 2", false)
+  new_question = Question.new
 
-  99999999.times {
+  while player1.current_lives > 0 && player2.current_lives > 0
     if player1.current_player = true
       puts "----- NEW TURN -----"
-      new_question = Question.new
       result = new_question.create_question(player1)
       if result == true
         puts "YES! That's correct!"
@@ -45,6 +45,6 @@ class Game
       player2.current_player = false
       player1.current_player = true
     end
-  }
+  end
 
 end
